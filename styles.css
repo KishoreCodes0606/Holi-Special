@@ -1,0 +1,168 @@
+:root {
+  --bg-deep: #140527;
+  --glass: rgba(255, 255, 255, 0.12);
+  --text: #fef8ff;
+  --accent: #ffc54d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at 15% 15%, #8d37ff88, transparent 35%),
+    radial-gradient(circle at 90% 10%, #00e5ff88, transparent 30%),
+    radial-gradient(circle at 60% 85%, #ff2f9288, transparent 28%),
+    var(--bg-deep);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#bg-canvas-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+.page {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 800;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.hero {
+  margin-top: 3.5rem;
+  max-width: 780px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.36rem 0.9rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(2.2rem, 7vw, 5.4rem);
+  line-height: 1.03;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  opacity: 0.92;
+}
+
+.row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  font-weight: 700;
+  padding: 0.74rem 1.2rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff3e90, #ff8f1f);
+  box-shadow: 0 10px 24px rgba(255, 76, 145, 0.35);
+}
+
+.btn.alt {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+
+.stats {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.card h3 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-top: 0.35rem;
+}
+
+.meter-area {
+  margin-top: 1.2rem;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.meter-track {
+  margin-top: 0.8rem;
+  height: 16px;
+  border-radius: 99px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.meter-fill {
+  height: 100%;
+  width: 18%;
+  background: linear-gradient(90deg, #23f6f4, #8f7bff, #ff54ad);
+}
+
+@media (max-width: 900px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .page {
+    width: min(1120px, 94vw);
+  }
+
+  .row .btn {
+    width: 100%;
+  }
+}
